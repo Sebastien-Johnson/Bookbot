@@ -1,4 +1,4 @@
-from stats import get_word_count
+from stats import get_word_count, get_element_count
 
 def get_book_text(f):
     return(f.read())
@@ -10,5 +10,7 @@ def main():
         w = get_book_text(f)
 
         get_word_count(w)
+
+        get_element_count(w)
 
 main()
