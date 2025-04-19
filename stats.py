@@ -1,6 +1,7 @@
 def get_word_count(w):
     num_words = len(w.split())
-    print(f"{num_words} words found in the document")
+    print("----------- Word Count ----------")
+    print(f"Found {num_words} total words")
 
 def get_element_count(w):
     num_ele = {}
@@ -10,4 +11,21 @@ def get_element_count(w):
         else:
             num_ele[i.lower()] = 1
 
-    print(num_ele)
+    return num_ele
+
+
+def organize_info(d):
+    orged_info = []
+
+    for i in d:
+        if i.isalpha() == True:
+            orged_info.append({"element" : i, "num" : d[i]})    
+
+    def sort_on(orged_info):
+        return orged_info["num"]
+
+    orged_info.sort(reverse=True, key=sort_on)
+    print("--------- Character Count -------")
+    
+    for i in orged_info:
+        print(f"{i["element"]}: {i["num"]}")
